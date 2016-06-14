@@ -9,13 +9,16 @@ The Dockerfile is refer to the gcoin-community building guide [Wiki](https://git
 # Usage:
 
 Edit the `username` and `password` in the gcoin.conf, then run the command:  
-`docker build -t gcoin-community .`
+`sudo docker build -t gcoin-community .`
 
 Run a gcoin instance:  
-`docker run -d -P --name your-gcoin gcoin-community`
-
+`sudo docker run -d -P --name your-gcoin gcoin-community`  
+`sudo docker exec -it your-gcoin bash`  
+`./src/gcoind -daemon`  
+  
+  
 You can check whether it is running:  
-`docker exec -it your-gcoin src/gcoin-cli getinfo`
+`sudo docker exec -it your-gcoin src/gcoin-cli getinfo`
 
 
 Have fun!
